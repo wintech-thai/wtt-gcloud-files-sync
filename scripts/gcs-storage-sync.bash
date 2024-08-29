@@ -5,7 +5,7 @@ DATE_STAMP=$(date '+%Y-%m-%d')
 gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
 
 #SRC_DIR=/data/source
-#DST_BUCKET=dest-bucket
+#DST_BUCKET=dest-bucket/xxxxxx
 
 echo "### Start syncing files..."
 

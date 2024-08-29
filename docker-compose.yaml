@@ -6,9 +6,9 @@ services:
     restart: always
     container_name: gcs-files-sync
     volumes:
-      - /home/xxxxx/sa.json:/secrets/sa.json
-      - /home/xxxxx/source:/data/source
+      - /home/seubpong_mon/tmp:/data/source
+      - /home/seubpong_mon/sa.json:/secrets/sa.json
     environment:
+      - DST_BUCKET=nap-nas-backup/backup-nakornpratom
       - SRC_DIR=/data/source
-      - DST_BUCKET=destination-bucket-here
       - GOOGLE_APPLICATION_CREDENTIALS=/secrets/sa.json
