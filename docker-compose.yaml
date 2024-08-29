@@ -2,7 +2,7 @@ version: '3'
 
 services:
   nginx: 
-    image: asia-southeast1-docker.pkg.dev/its-artifact-commons/wtt/gcs-storage-sync:v0.0.2
+    image: asia-southeast1-docker.pkg.dev/its-artifact-commons/wtt/gcs-storage-sync:${IMAGE_VERSION}
     restart: always
     container_name: gcs-files-sync
     volumes:
@@ -12,3 +12,5 @@ services:
       - DST_BUCKET=nap-nas-backup/backup-nakornpratom
       - SRC_DIR=/data/source
       - GOOGLE_APPLICATION_CREDENTIALS=/secrets/sa.json
+      - MAILGUN_API_KEY=${MAILGUN_API_KEY}
+      - NOTIFICATION_EMAIL=${NOTIFICATION_EMAIL}
